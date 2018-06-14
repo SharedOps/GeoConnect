@@ -14,5 +14,10 @@ namespace GeoConnect.Controllers
 
             return View();
         }
+
+        public ActionResult Registration()
+        {
+            return View();
+        }
     }
 }
