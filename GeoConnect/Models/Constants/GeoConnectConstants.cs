@@ -7,6 +7,7 @@ namespace GeoConnect.Models.Constants
 {
     public class GeoConnectConstants
     {
+        public const string baseURL          = "http://localhost/GeoConnect/";
         public const string spNameAddUser    = "sp_insert_Users";
         public const string spNameUpdateUser = "sp_update_Users";
         public const string spNameDeleteUser = "";
