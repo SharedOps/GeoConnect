@@ -25,14 +25,35 @@
 
      $(addUser).click(function () {
          var byteData = reader.result;
+         $("#TXTBASE64").val(byteData)
+         console.log(byteData);
          byteData = byteData.split(';')[1].replace("base64,", "");
          var obj = {};
          obj.Data = byteData;
          obj.Name = fileName;
          obj.ContentType = contentType;
          console.log(obj.Data);
+
+         $.ajax({
+             url: 'http://localhost/geoconnect/api/userRegistration/adduser',
+             dataType: 'json',
+             type: 'post',
+             contentType: 'application/json',
+             data: JSON.stringify({ "Name": "string1", "Mobile_no1": "string1", "Email": "string", "Location": "string", "Avatar": byteData, }),
+             processData: false,
+             success: function (data, textStatus, jQxhr) {
+                 $('#success_message').html(JSON.stringify(data));
+             },
+             error: function (jqXhr, textStatus, errorThrown) {
+                 console.log(errorThrown);
+             }
+         });
      });
 
 
+
  });
+
+
+
 

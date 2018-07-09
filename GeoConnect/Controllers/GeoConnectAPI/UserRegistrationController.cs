@@ -34,24 +34,24 @@ namespace GeoConnect.Controllers.GeoConnect
             }
 
         }
-        [HttpGet]
-        public DataTable GetAllUsers()
-        {
-            try
-            {
-                string spName = Models.Constants.GeoConnectConstants.spNameGetUsers;
-                Dictionary<string, SqlParameter> cmdParams = new Dictionary<string, SqlParameter>();
-                DataSet ds = DAL.SqlUtility.DALExecuteQuery(spName, cmdParams);
-                DataTable dt = ds.Tables[0];
-                return dt;
-            }
-            catch (Exception)
-            {
+        //[HttpGet]
+        //public DataTable GetAllUsers()
+        //{
+        //    try
+        //    {
+        //        string spName = Models.Constants.GeoConnectConstants.spNameGetUsers;
+        //        Dictionary<string, SqlParameter> cmdParams = new Dictionary<string, SqlParameter>();
+        //        DataSet ds = DAL.SqlUtility.DALExecuteQuery(spName, cmdParams);
+        //        DataTable dt = ds.Tables[0];
+        //        return dt;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
+        //        throw;
+        //    }
 
-        }
+        //}
 
 
     }
