@@ -5,16 +5,15 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
-
 namespace GeoConnect.DAL
 {
-    public static class SqlUtility
+    public static class ErrorUtility
     {
+
         public static string getSQLConnetionString()
         {
             string connString = string.Empty;
-            connString = "Data Source = Manikanta; Initial Catalog = GeoConnect; Integrated Security = True";
+            connString = "Data Source = Manikanta; Initial Catalog = GeoConnect_Logging; Integrated Security = True";
             return connString;
         }
 
@@ -75,8 +74,5 @@ namespace GeoConnect.DAL
             }
 
         }
-
-      
-
     }
 }

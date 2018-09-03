@@ -207,10 +207,12 @@
     <Compile Include="Controllers\GeoConnectMVC\DisplayUsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\ErrorUtility.cs" />
     <Compile Include="DAL\SqlUtility.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logging\ErrorLogging.cs" />
     <Compile Include="Models\Constants\GeoConnectConstants.cs" />
     <Compile Include="Models\GeoConnect\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

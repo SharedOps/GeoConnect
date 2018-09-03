@@ -15,8 +15,6 @@ namespace GeoConnect.Models.GeoConnect
         public string Location { get; set; }
         public string Avatar { get; set; }
 
-        public string imagestrem { get; set; }
-
         [DisplayFormat(DataFormatString = "{0:d/M/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Created_date { get; set; }
 

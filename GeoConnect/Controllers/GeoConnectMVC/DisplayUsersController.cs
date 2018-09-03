@@ -41,9 +41,8 @@ namespace GeoConnect.Controllers.GeoConnectMVC
 
                     foreach (var item in userInfo)
                     {
-                        item.imagestrem = item.Avatar.ToString();
+                        item.Avatar = item.Avatar.ToString();
                     }
-
                    
                 }
                 //returning the employee list to view  

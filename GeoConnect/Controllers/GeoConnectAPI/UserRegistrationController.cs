@@ -25,34 +25,15 @@ namespace GeoConnect.Controllers.GeoConnect
                 cmdParams["@p_Mobile_no"] = new SqlParameter("@p_Mobile_no", newuser.Mobile_no);
                 cmdParams["@p_Email"]     = new SqlParameter("@p_Email", newuser.Email);
                 cmdParams["@p_Location"]  = new SqlParameter("@p_Location", newuser.Location);
-                cmdParams["@p_Avatar"]    = new SqlParameter("@p_Avatar", newuser.Avatar);
+                cmdParams["@p_Avatar"]    = new SqlParameter("@p_Avatar", newuser.Avatar.ToString());
                 DAL.SqlUtility.DALExecuteCommand(spName, cmdParams);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Logging.ErrorLogging.LogError(ex.Message.ToString(), "UserRegistration", "");
             }
 
         }
-        //[HttpGet]
-        //public DataTable GetAllUsers()
-        //{
-        //    try
-        //    {
-        //        string spName = Models.Constants.GeoConnectConstants.spNameGetUsers;
-        //        Dictionary<string, SqlParameter> cmdParams = new Dictionary<string, SqlParameter>();
-        //        DataSet ds = DAL.SqlUtility.DALExecuteQuery(spName, cmdParams);
-        //        DataTable dt = ds.Tables[0];
-        //        return dt;
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-
-        //}
-
 
     }
 

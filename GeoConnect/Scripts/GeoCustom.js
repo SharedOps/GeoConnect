@@ -11,6 +11,7 @@
                     fileName = file[0].name;
                     contentType = file[0].type;
                     reader.readAsDataURL(file[0]);
+                    $("#TXTBASE64").val(reader.result)
                 } else {
                     alert(file[0].name + " is not a valid image file.");
                     return false;
@@ -24,25 +25,17 @@
      var addUser = "#AddUserDetails";
 
      $(addUser).click(function () {
-         var byteData = reader.result;
-         $("#TXTBASE64").val(byteData)
-         console.log(byteData);
-         byteData = byteData.split(';')[1].replace("base64,", "");
-         var obj = {};
-         obj.Data = byteData;
-         obj.Name = fileName;
-         obj.ContentType = contentType;
-         console.log(obj.Data);
-
+         var x = reader.result;
          $.ajax({
-             url: 'http://localhost/geoconnect/api/userRegistration/adduser',
+             url: 'http://localhost/geoconnect/api/userRegistration',
              dataType: 'json',
              type: 'post',
              contentType: 'application/json',
-             data: JSON.stringify({ "Name": "string1", "Mobile_no1": "string1", "Email": "string", "Location": "string", "Avatar": byteData, }),
+             data: JSON.stringify({ "Name": "string1", "Mobile_no": "string1", "Email": "string", "Location": "string", "Avatar": x}),
              processData: false,
              success: function (data, textStatus, jQxhr) {
                  $('#success_message').html(JSON.stringify(data));
+                 console.log(xhr.status);
              },
              error: function (jqXhr, textStatus, errorThrown) {
                  console.log(errorThrown);
