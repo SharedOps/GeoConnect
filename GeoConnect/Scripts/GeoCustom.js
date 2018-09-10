@@ -35,7 +35,7 @@
              processData: false,
              success: function (data, textStatus, jQxhr) {
                  $('#success_message').html(JSON.stringify(data));
-                 console.log(xhr.status);
+                 console.log(jQxhr.status);
              },
              error: function (jqXhr, textStatus, errorThrown) {
                  console.log(errorThrown);

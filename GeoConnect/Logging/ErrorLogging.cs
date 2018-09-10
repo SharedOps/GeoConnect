@@ -18,7 +18,7 @@ namespace GeoConnect.Logging
                 cmdParams["@p_ErrorDescription"] = new SqlParameter("@p_ErrorDescription", error);
                 cmdParams["@p_UserName"]         = new SqlParameter("@p_UserName", userName);
                 cmdParams["@p_IPAddtress"]       = new SqlParameter("@p_IPAddtress", ipAddress);
-                DAL.ErrorUtility.DALExecuteCommand(Models.Constants.GeoConnectConstants.spNameAddUser, cmdParams);
+                DAL.ErrorUtility.DALExecuteCommand(Models.Constants.GeoConnectConstants.spLogError, cmdParams);
             }
             catch (Exception ex)
             {
